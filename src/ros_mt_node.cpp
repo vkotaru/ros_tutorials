@@ -1,13 +1,14 @@
-//
-// Created by kotaru on 3/23/21.
-//
-// https://answers.ros.org/question/217960/how-to-write-a-thread-in-ros/
+/**
+ * Created by kotaru on 3/23/21
+ * https://answers.ros.org/question/217960/how-to-write-a-thread-in-ros/
+ * 
+ */
 
 #include <boost/thread/thread.hpp>
 #include <ros/ros.h>
 #include <std_msgs/Empty.h>
 
-void do_stuff(int *publish_rate) {
+void do_stuff(const int *publish_rate) {
   ros::NodeHandlePtr node = boost::make_shared<ros::NodeHandle>();
   ros::Publisher pub_b = node->advertise<std_msgs::Empty>("topic_b", 10);
 
